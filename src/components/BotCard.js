@@ -10,7 +10,7 @@ const botTypeClasses = {
 };
 
 
-function BotCard({ bot, onBotClick, onRemoveButton, removedBot = [] }) {
+function BotCard({ bot, onBotClick, onRemoveButton }) {
   function handleClick() {
     onBotClick(bot)
   };

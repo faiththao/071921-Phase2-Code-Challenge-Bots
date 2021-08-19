@@ -43,7 +43,7 @@ function BotsPage() {
       onRemoveButton={handleButton}/>
       <BotCollection bots={bots} 
       onAddBot={handleAddBot} 
-      
+      onRemoveButton={handleButton}
       />
     </div>
   )
