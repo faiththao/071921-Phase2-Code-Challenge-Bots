@@ -1,13 +1,14 @@
 import React from "react";
 import BotCard from "./BotCard";
 
-function BotCollection({ bots, onAddBot, onRemoveButton}) {
+function BotCollection({ bots, onAddBot, onRemoveButton, removedBot}) {
   // Your code here
   const allBots = bots.map((bot) => (
     <BotCard key={bot.id} 
     bot={bot} 
     onBotClick={onAddBot} 
-    removeButton={onRemoveButton}/>
+    removeButton={onRemoveButton}
+    removedBot={removedBot}/>
   ))
 
   

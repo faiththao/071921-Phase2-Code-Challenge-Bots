@@ -10,10 +10,19 @@ function BotsPage() {
   const [bots, setBots] = useState([]);
   const [botArmy, setBotArmy] = useState([]);
 
+  const removedBot = bots.filter(bot => bot.removed)
+
+
   useEffect(() => {
     fetch(API)
     .then(res => res.json())
-    .then(bots => setBots(bots))
+    // .then(bots => setBots(bots))
+    .then(bots => {
+      const updateBots = bots.map(bot => {
+        return {...bot, removed: false}
+      })
+      setBots(updateBots)
+    })
   }, [])
 
   function handleAddBot(botToAdd) {
@@ -40,7 +49,8 @@ function BotsPage() {
       <YourBotArmy bots={botArmy} onRemoveBot={handleRemoveBot}/>
       <BotCollection bots={bots} 
       onAddBot={handleAddBot} 
-      onRemoveButton={handleButton}/>
+      onRemoveButton={handleButton}
+      removeBot={removeBot}/>
     </div>
   )
 }
