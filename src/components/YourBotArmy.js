@@ -1,10 +1,10 @@
 import React from "react";
 import BotCard from "./BotCard";
 
-function YourBotArmy({ bots, onRemoveBot }) {
+function YourBotArmy({ bots, onRemoveBot, onRemoveButton }) {
   //your bot army code here...
   const botList = bots.map(bot => (
-    <BotCard key={bot.id} bot={bot} onBotClick={onRemoveBot} />
+    <BotCard key={bot.id} bot={bot} onBotClick={onRemoveBot} onRemoveButton={onRemoveButton}/>
   ))
   
   return (

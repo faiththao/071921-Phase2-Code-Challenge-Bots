@@ -10,13 +10,13 @@ const botTypeClasses = {
 };
 
 
-function BotCard({ bot, onBotClick, removeButton, removedBot = [] }) {
+function BotCard({ bot, onBotClick, onRemoveButton, removedBot = [] }) {
   function handleClick() {
     onBotClick(bot)
   };
 
   function handleRemove() {
-    removeButton(bot)
+    onRemoveButton(bot)
   };
 
   return (
@@ -56,7 +56,7 @@ function BotCard({ bot, onBotClick, removeButton, removedBot = [] }) {
             <div className="ui center aligned segment basic">
               <button
                 className="ui mini red button"
-                onClick={handleRemove}
+                onClick={() => handleRemove()}
               >
                 x
               </button>
