@@ -16,13 +16,7 @@ function BotsPage() {
   useEffect(() => {
     fetch(API)
     .then(res => res.json())
-    // .then(bots => setBots(bots))
-    .then(bots => {
-      const updateBots = bots.map(bot => {
-        return {...bot, removed: false}
-      })
-      setBots(updateBots)
-    })
+    .then(bots => setBots(bots))
   }, [])
 
   function handleAddBot(botToAdd) {
@@ -50,7 +44,7 @@ function BotsPage() {
       <BotCollection bots={bots} 
       onAddBot={handleAddBot} 
       onRemoveButton={handleButton}
-      removeBot={removeBot}/>
+      />
     </div>
   )
 }
